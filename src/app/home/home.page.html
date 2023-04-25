@@ -1,20 +1,31 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Enclosure Calculator
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-card *ngFor="let item of list; index as i">
+    <ion-card-title class="ion-padding">{{item.type}}</ion-card-title>
+    <ion-card-content>
+      <app-data [source]="item"></app-data>
+      <ion-button fill="outline" size="small" color="danger" (click)="deleteElement(i)">
+        <ion-icon slot="start" name="close-outline"></ion-icon>
+        Delete
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+<ion-fab slot="fixed" horizontal="end" vertical="bottom">
+  <ion-fab-button>
+    <ion-icon name="add" (click)="openSelection()"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title size="medium">Total:</ion-title>
+    <ion-label class="ion-padding">Area: {{totalArea}}m^2</ion-label>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,7 @@
+<ion-grid>
+  <ion-row *ngFor="let param of source.showableData">
+    <ion-col>{{param.name}}: <ion-icon name="help-circle-outline" button (click)="presentPopover($event, param.description)"></ion-icon></ion-col>
+    <ion-col>{{param.data}}</ion-col>
+    
+  </ion-row>
+</ion-grid>

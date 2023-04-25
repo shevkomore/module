@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Select an enclosure type:</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cancel()">Return</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-progress-bar type="indeterminate" *ngIf="!finishedLoading"></ion-progress-bar>
+  <ion-list *ngIf="finishedLoading">
+    <ion-item button *ngFor="let option of this.optionsMap" (click)="this.select(option.id)">
+      {{option.text}}
+    </ion-item>
+  </ion-list>
+</ion-content>

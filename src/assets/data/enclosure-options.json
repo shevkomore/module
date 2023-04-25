@@ -1,0 +1,38 @@
+{
+      "reptile-snake": {
+        "type": "Змії",
+        "shape": {
+          "length": 2,
+          "width": 2,
+          "height": 0.5
+        },
+        "requirements": [
+          "Пісок",
+          "Великі гілки"
+          ]
+      },
+      "reptile-turtle": {
+        "type": "Черепахи",
+        "shape": {
+          "length": 5,
+          "width": 6
+        },
+        "requirements": [
+          "Озеро"
+          ]
+      },
+      "reptile-chameleon": {
+        "type": "Хамелеони",
+        "shape": {
+          "length": 3.9,
+          "width": 4.9,
+          "height": 1
+        },
+        "requirements": [
+          "Пісок",
+          "Великі гілки",
+          "Озеро"
+          ]
+      }
+    
+  }
